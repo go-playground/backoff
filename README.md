@@ -11,7 +11,7 @@ Backoff library uses an exponential backoff algorithm to backoff between retries
 
 What makes this different from other backoff libraries?
 1. Simple, by automatically calculating the exponential factor between the min and max backoff times; which properly tunes to your desired values.
-2. Provides an optional `AutoTune` function which will adjust the min backoff duration based upon successful backoff durations.
+2. Provides an optional `AutoTune` function which will adjust the min backoff duration based upon successful backoff duration retries.
 
 Why AutoTune?
 
@@ -32,6 +32,7 @@ import (
 )
 
 func main() {
+        // backoff.New(retries, min, max)
 	bo := backoff.New(5, time.Second, time.Minute)
 	defer bo.Close()
 
@@ -67,7 +68,9 @@ import (
 )
 
 func main() {
+        // backoff.New(retries, min, max)
 	bo := backoff.New(5, time.Second, 10*time.Second)
+	// bo.AutoTune(poll, reset)
 	bo.AutoTune(30*time.Second, 2*time.Minute)
 	defer bo.Close()
 
@@ -104,7 +107,7 @@ func main() {
 
 Requirements
 ------------
->= Go v1.9
+\>= Go v1.9
 
 Package Versioning
 ---------------
