@@ -81,12 +81,10 @@ func main() {
 					case 2:
 						return false, errors.New("ERR")
 					case 3:
-						count = 0
 						return false, nil
 					case 4:
 						return false, errors.New("ERR")
 					default: //case 5:
-						count = 0
 						return false, nil
 					}
 				}, func(attempt uint16, waiting time.Duration, err error) {
