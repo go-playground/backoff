@@ -12,7 +12,7 @@ What makes this different from other backoff libraries?
 
 Why AutoTune?
 
-For long running services that hit external services such as writing to a DB or that hit a 3rd party API's, where successful attempts backoff durations can vary over time as load changes.
+For long running services that hit external services such as writing to a DB or that hit a 3rd party API's, where successful attempts backoff durations can vary over time as load changes. Additionally by using auto it should provide an automatic jitter when multiple copies of a service are running.
 
 Example Basic
 ------------
