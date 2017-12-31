@@ -1,5 +1,8 @@
 Backoff library
 =============
+![Project status](https://img.shields.io/badge/version-1.0.0-green.svg)
+[![Build Status](https://travis-ci.org/go-playground/backoff.svg?branch=master)](https://travis-ci.org/go-playground/backoff)
+[![Coverage Status](https://coveralls.io/repos/github/go-playground/backoff/badge.svg?branch=master)](https://coveralls.io/github/go-playground/backoff?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/go-playground/backoff)](https://goreportcard.com/report/github.com/go-playground/backoff)
 [![GoDoc](https://godoc.org/github.com/go-playground/backoff?status.svg)](https://godoc.org/github.com/go-playground/backoff)
 ![License](https://img.shields.io/dub/l/vibe-d.svg)
@@ -8,11 +11,11 @@ Backoff library uses an exponential backoff algorithm to backoff between retries
 
 What makes this different from other backoff libraries?
 1. Simple, by automatically calculating the exponential factor between the min and max backoff times; which properly tunes to your desired values.
-2. Provides an optional AutoTune function which will adjust the min backoff duration based upon successful backoff durations.
+2. Provides an optional `AutoTune` function which will adjust the min backoff duration based upon successful backoff durations.
 
 Why AutoTune?
 
-For long running services that hit external services such as writing to a DB or that hit a 3rd party API's, where successful attempts backoff durations can vary over time as load changes. Additionally by using auto it should provide an automatic jitter when multiple copies of a service are running.
+For long running services that hit external services such as writing to a DB or that hit a 3rd party API's, where successful attempts backoff durations can vary over time as load changes. Additionally by using `AutoTune` it should provide an automatic jitter when multiple copies of a service are running.
 
 Example Basic
 ------------
