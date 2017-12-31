@@ -99,6 +99,10 @@ func main() {
 }
 ```
 
+Requirements
+------------
+>= Go v1.9
+
 Package Versioning
 ---------------
 I'm jumping on the vendoring bandwagon, you should vendor this package as I will not
